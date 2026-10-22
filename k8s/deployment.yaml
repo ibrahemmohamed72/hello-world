@@ -12,9 +12,12 @@ spec:
       labels:
         app: hello-world
     spec:
+      imagePullSecrets:
+        - name: dockerhub-pull
       containers:
         - name: hello-world
-          image: ibrahemmohamed72/hello-world:build-1
+          image: ibrahemmohamed72/hello-world:build-3
+          imagePullPolicy: Always
           envFrom:
             - configMapRef:
                 name: hello-world-config
